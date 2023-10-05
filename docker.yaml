@@ -1,0 +1,15 @@
+volumes:
+  data:
+
+services:
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=docker
+      - MONGO_INITDB_ROOT_PASSWORD=mongopw
+    ports:
+      - 27017:27017
+    volumes:
+      - data:/data/db
+  myapp:
+    image: 135a4f00c49459ce5245f0fe8c07a67679aa5eef587023597eba95a7aa39dac6
